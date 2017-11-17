@@ -6,7 +6,7 @@ var { address } = require('./modules/address');
 var google = require('./../server/api/google');
 var darksky = require('./../server/api/darksky');
 var Address;
-
+const port = process.env.PORT || 3000;
 
 var app = express();
 app.set('view engin', 'hbs');
@@ -71,8 +71,8 @@ app.get('/', (req, res) => {
 
 });
 
-app.listen(3001, () => {
-    console.log('started at 3001 .')
+app.listen(port, () => {
+    console.log(`started at ${port} .`)
 });
 
 
